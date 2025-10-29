@@ -1,0 +1,17 @@
+{
+   "appName": "My Electron App",
+   "version": "1.0.0",
+   "features": {
+      "autoUpdate": true,
+      "analytics": false,
+      "debugMode": false
+   },
+   "api": {
+      "baseUrl": "https://api.example.com",
+      "timeout": 5000
+   },
+   "ui": {
+      "theme": "light",
+      "language": "zh-CN"
+   }
+}
