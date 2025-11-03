@@ -9,4 +9,12 @@ export default defineConfig({
          ...commonAlias,
       },
    },
+   build: {
+      rollupOptions: {
+         output: {
+            // 指定 main 进程输出文件名
+            entryFileNames: 'index.js',
+         },
+      },
+   },
 });

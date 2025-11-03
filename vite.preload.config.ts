@@ -10,4 +10,11 @@ export default defineConfig({
          ...commonAlias,
       },
    },
+   build: {
+      rollupOptions: {
+         output: {
+            entryFileNames: 'preload.js',
+         },
+      },
+   },
 });

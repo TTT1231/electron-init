@@ -9,6 +9,6 @@
          "@resources/*": ["resources/*"]
       }
    },
-   "include": ["src/preload/**/*.ts"],
+   "include": ["src/preload/**/*.ts", "src/shared/**/*.ts"],
    "exclude": []
 }
