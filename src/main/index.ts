@@ -3,12 +3,6 @@ import path from 'node:path';
 import { app, BrowserWindow } from 'electron';
 import started from 'electron-squirrel-startup';
 
-import { bootstrap } from './bootstrap';
-
-(async () => {
-   await bootstrap(); // 等待异步初始化完成
-})();
-
 if (started) {
    app.quit();
 }
@@ -16,8 +10,8 @@ if (started) {
 const createWindow = () => {
    // Create the browser window.
    const mainWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
+      width: 1200,
+      height: 800,
       webPreferences: {
          // 启用 contextBridge 和禁用 nodeIntegration 是安全最佳实践
          nodeIntegration: false,

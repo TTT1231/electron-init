@@ -5,11 +5,11 @@
    "description": "My Electron application description",
    "main": ".vite/build/index.js",
    "scripts": {
-      "start": "chcp 65001 && electron-forge start",
-      "dev": "chcp 65001 && electron-forge start",
-      "package": "chcp 65001 && electron-forge package",
-      "make": "chcp 65001 && electron-forge make",
-      "publish": "chcp 65001 && electron-forge publish",
+      "start": "electron-forge start",
+      "dev": "electron-forge start",
+      "package": "electron-forge package",
+      "make": " electron-forge make",
+      "publish": "electron-forge publish",
       "lint": "eslint --ext .ts .",
       "format": "prettier --write ."
    },
@@ -50,11 +50,9 @@
    },
    "dependencies": {
       "@tailwindcss/vite": "^4.1.16",
-      "dotenv": "^17.2.3",
       "electron-squirrel-startup": "^1.0.1",
       "tailwindcss": "^4.1.16",
       "vue": "^3.5.22",
-      "vue-tsc": "^3.1.2",
-      "zod": "^4.1.12"
+      "vue-tsc": "^3.1.2"
    }
 }

@@ -3,7 +3,6 @@
    "compilerOptions": {
       //语言和环境
       "target": "ESNext",
-      "composite": true,
 
       //模块和解析
       "module": "esnext",
@@ -13,7 +12,6 @@
 
       //js 支持
       "allowJs": true,
-      "checkJs": true,
 
       //emit
       "sourceMap": true,
@@ -32,7 +30,8 @@
       "noUncheckedSideEffectImports": true,
 
       //一致性
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "libReplacement": false
    },
    "exclude": ["node_modules", ".vite", "out"]
 }

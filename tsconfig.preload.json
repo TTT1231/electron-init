@@ -1,14 +1,18 @@
 {
    "extends": "./tsconfig.node.json",
    "compilerOptions": {
-      "types": ["node", "electron"],
-      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "lib": ["ES2020"],
       "paths": {
          "@preload/*": ["src/preload/*"],
          "@shared/*": ["src/shared/*"],
          "@resources/*": ["resources/*"]
       }
    },
-   "include": ["src/preload/**/*.ts", "src/shared/**/*.ts"],
+   "include": [
+      "src/preload/**/*.ts",
+      "src/preload/**/*.d.ts",
+      "src/shared/**/*.ts",
+      "src/shared/**/*.d.ts"
+   ],
    "exclude": []
 }

@@ -1,60 +1,48 @@
-your-electron-project/
-├── src/
-│ ├── main/ # 主进程代码
-│ │ ├── index.ts # 主进程入口文件
-│ │ ├── config/ # 配置管理
-│ │ ├── windows/ # 窗口管理
-│ │ ├── ipc/ # IPC通信处理
-│ │ ├── menu/ # 应用菜单
-│ │ ├── updater/ # 自动更新
-│ │ ├── security/ # 安全策略
-│ │ └── utils/ # 主进程工具函数
-│ ├── preload/ # 预加载脚本
-│ │ ├── index.ts # 预加载入口
-│ │ ├── api.ts # API桥接
-│ │ └── types # 类型定义
-│ ├── renderer/ # 渲染进程代码
-│ │ ├── main.ts # 渲染进程入口
-│ │ ├── App.vue # 主应用组件
-│ │ └── ...
-│ └── shared/ # 共享代码
-│ ├── types/ # 共享类型定义
-│ ├── constants/ # 常量
-│ └── utils/ # 共享工具函数
-├── resources/ # 资源文件
-├── scripts/ # 构建脚本
-└── dist/ # 构建输出
+# 项目文档
 
-## 测试主进程资源访问
+## 项目目录结构
 
-```ts
-import { ResourceManager } from '../shared/utils/resource-manager';
+```js
+📂 electron-init/
+  📂 .vscode/              //vscode 配置文件目录
+  📂 resources/            //资源目录
+    📂 public/             //渲染进程资源目录
+    📂 shared/             //共享资源目录
+  📂 src/                  //源代码目录
+    📂 main/               //主进程目录
+    📂 preload/            //预加载脚本目录
+    📂 renderer/           //渲染进程目录
+    📂 shared/             //共享代码目录
+  📄 eslint.config.mjs     //eslint 配置文件
+  📄 .prettierignore       //prettiter忽略文件
+  📄 .prettierrc.json      //prettiter配置文件
+  📄 .editorconfig         //跨编译器配置
+  📄 forge.config.ts       //forge 配置文件
+  📄 forge.env.d.ts        //forge 环境变量类型定义文件
+  📄 index.html            //渲染进程入口文件
+  📄 package.json
+  📄 .gitignore            //git 忽略文件
+  📄 .npmrc                //npm 配置文件
+  📄 pnpm-workspace.yaml   //pnpm 工作空间配置文件
+  📄 README.md             //项目说明文档
+  📄 tsconfig.json         //项目 TypeScript 配置文件
+  //...
+  📄 vite.renderer.config.ts     //渲染进程 Vite 配置文件
+  //...
+```
 
-/**
- * 测试主进程中的资源访问
- */
-export async function testMainProcessResources() {
-   console.log('=== 测试主进程资源访问 ===');
+## Quick Start
 
-   try {
-      // 测试配置文件读取
-      const config = await ResourceManager.loadSharedConfig('app-config.json');
-      console.log('✅ 成功读取配置文件:', config.appName);
+````code-group
 
-      // 测试路径解析
-      const dataPath = ResourceManager.getSharedResourcePath('data/test.json');
-      console.log('✅ 数据文件路径:', dataPath);
+```ternimal
+pnpm i
+````
 
-      const templatePath = ResourceManager.getSharedResourcePath('templates/test.html');
-      console.log('✅ 模板文件路径:', templatePath);
+```ternimal
+pnpm run dev
+```
 
-      return {
-         success: true,
-         config,
-         paths: { dataPath, templatePath },
-      };
-   } catch (error) {
-      console.error('❌ 主进程资源访问失败:', error);
-   }
-}
+```
+
 ```
